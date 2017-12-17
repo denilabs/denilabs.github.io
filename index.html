@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+	      emailjs.init("user_2NHhLFeeiMn99O5iutPIA");
+	   })();
+	</script>
 </head>
 <body>
 <section id="header">
@@ -36,8 +42,13 @@
 				</div>
 		</div>
 	</nav>
-	<div class="wrap">
-		<h1 align="center"><span style="color: #009eb2">w</span>elcome</h1>
+	<div class="container">
+		
+			<div class="wrapper">
+				<img src="images/logo.png" class="img-responsive">
+				<h1 align="center">denilabs</h1>
+			</div>
+		
 	</div>
 </section>
 <section id="content-1">
@@ -142,7 +153,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-5 col-sm-6">
+			<div class="col-md-5 col-sm-6" id="container">
 				<div class="spacer"></div>
 				<h1 class="touch">my last <b>activity</b></h1>
 				<div class="media">
@@ -167,6 +178,7 @@
 				    Get free design for website kit here http://wheezy.xyz
 				  </div>
 				</div>
+				
 			</div>
 			<div class="col-md-1">&nbsp;</div>
 		</div>
@@ -182,37 +194,37 @@
 			<div class="col-md-12" style="padding: 20px;">
 				<h1 class="ct-1">feel <b>free</b></h1>
 				<h1 class="ct-2"> to <b>message</b> me</h1>
-				<form class="form">
+				<form class="form" id="my_form">
 					<div class="form-group">
 						<label for="name">Your Name</label>
-						<input class="form-control" type="text" name="yourname">
+						<input id="name" class="form-control" type="text" name="name">
 						
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<label for="email">Your Email</label>
-							<input class="form-control" type="email" name="email">
+							<input id="email" class="form-control" type="email" name="email">
 							
 						</div>
 						<div class="col-md-6">
 							<label for="phone">Phone Number</label>
-							<input class="form-control" type="text" name="phone">
+							<input id="phone" class="form-control" type="text" name="phone">
 							
 						</div>
 					</div><br>
 					<label for="text">Your Text</label>
 					<div class="form-group">
-						<input type="text" name="textmessage" class="form-control">
+						<input id="text" type="text" name="text" class="form-control">
 					</div>
 					<div class="form-group">
-						<button class="btn btn-default btn-block">Send message</button>
+						<button id="sendMail" class="btn btn-default btn-block" onclick="result(this.form)">Send message</button>
 					</div>
 				</form>
 			</div>
 		</div>
 		<div class="container">
 			<div class="footer" style="padding-bottom: 20px;padding-top: 20px;">
-				<p align="center" style="color: #eee;">&copy 2016 wheezy.xyz</p>
+				<p align="center" style="color: #eee;">&copy 2016 denilabs</p>
 			</div>
 		</div>
 	</div>
@@ -220,8 +232,67 @@
 <!--    javascript      -->
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		
+		function result(form){
+			var nama = form.name.value;
+			var emails = form.email.value;
+			var phones = form.phone.value;
+			var texts = form.text.value;
+
+			var service_id = 'gmail';
+			var template_id = 'denilabs';
+			var template_params = {
+			name: nama,
+			email: emails,
+			phone: phones,
+			text: texts
+			};
+
+			emailjs.send(service_id,template_id,template_params);
+		};
+	</script>
+	
+
+    <script src="js/jquery.smooth-scroll.js"></script>
     <script type="text/javascript">
-    	
+    	$(document).ready(function(){
+    		$('.next-b').on('click', function() {
+		        $.smoothScroll({
+		          afterScroll: function() {
+		            console.log('hello!')
+		          }
+		        }, '+=500px');
+		    });
+		    $('.next-b2').on('click', function() {
+		        $.smoothScroll({
+		          afterScroll: function() {
+		            console.log('hello!')
+		          }
+		        }, '+=500px');
+		    });
+		    $('.next-w').on('click', function() {
+		        $.smoothScroll({
+		          afterScroll: function() {
+		            console.log('hello!')
+		          }
+		        }, '+=500px');
+		    });
+		    $('.next-ct').on('click', function() {
+		        $.smoothScroll({
+		          afterScroll: function() {
+		            console.log('hello!')
+		          }
+		        }, '+=500px');
+		    });
+		    $('.next-g').on('click', function() {
+		        $.smoothScroll({
+		          afterScroll: function() {
+		            console.log('hello!')
+		          }
+		        }, '+=500px');
+		    });
+    	});
     </script>
 </body>
 </html>

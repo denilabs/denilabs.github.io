@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url(font-awesome.css);
 @import url(bootstrap.css);
 
 html, body
 {
 	margin: 0;padding: 0;background: #252525;
+	font-family: 'Montserrat', 'sans-serif' !important;
+}
+
+div.wrapper{
+	width: 100%;
+	padding-top: 50px;
+}
+
+div.wrapper > img{
+	margin: 0 auto;
+}
+
+div.wrapper > h1{
+	margin: 0 auto;
+	color: #eee;
+	font-weight: lighter;
+	text-transform: capitalize;
 }
 
 .badge{
@@ -28,7 +46,7 @@ section#header{
 
 	section#header > nav > div.container > span{
 		color: #eee;
-		font-size: 1.7em;
+		font-size: 2em;
 		padding-right: 10px;
 		cursor: pointer;
 	}
@@ -67,6 +85,7 @@ section#content-1{
 		margin: 0 auto;
 		position: relative;
 		top: -25px;
+		cursor: pointer;
 	}
 	section#content-1 > div.next-b > span{
 		font-size: 1.4em;
@@ -133,6 +152,7 @@ section#content-2{
 		margin: 0 auto;
 		position: relative;
 		top: -25px;
+		cursor: pointer;
 	}
 	section#content-2 > div.next-w > span{
 		font-size: 1.4em;
@@ -178,6 +198,7 @@ section#portofolio{
 		margin: 0 auto;
 		position: relative;
 		top: -25px;
+		cursor: pointer;
 	}
 	section#portofolio > div.next-g > span{
 		font-size: 1.4em;
@@ -228,6 +249,7 @@ section#connected{
 		margin: 0 auto;
 		position: relative;
 		top: -25px;
+		cursor: pointer;
 	}
 	section#connected > div.next-b2 > span{
 		font-size: 1.4em;
@@ -287,6 +309,7 @@ section#contact{
 		margin: 0 auto;
 		position: relative;
 		top: -25px;
+		cursor: pointer;
 	}
 	section#contact > div.next-ct > span{
 		font-size: 1.4em;
@@ -353,6 +376,9 @@ section#contact{
 
 		section#header > div.wrap{
 			margin-top: 17%;
+		}
+		div.wrapper > img{
+			margin: 0 auto;
 		}
 	}
 
